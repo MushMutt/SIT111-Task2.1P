@@ -1,0 +1,7 @@
+Chip Mux (
+    IN a, b, sel
+    OUT out
+
+    PARTS:
+    
+)
