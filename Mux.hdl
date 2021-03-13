@@ -1,7 +1,10 @@
-Chip Mux (
-    IN a, b, sel
-    OUT out
+CHIP Mux {
+    IN a, b, sel;
+    OUT out;
 
     PARTS:
-    
-)
+    Nand (a=sel, b=sel, out=selNandSel);
+    Nand (a=sel, b=b, out=selNandB);
+    Nand (a=a, b=selNandSel, out=aNandSelNandSel);
+    Nand (a=selNandB, b=aNandSelNandSel, out=out);
+}
